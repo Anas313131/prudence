@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "393526742914",
+    "project_id": "prudence-46f5f",
+    "storage_bucket": "prudence-46f5f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393526742914:android:b89999b0cb80f46a8f499b",
+        "android_client_info": {
+          "package_name": "com.prudence"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARR58x2TAmVhXyQiP2wIVNSSgWIY2kAvo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

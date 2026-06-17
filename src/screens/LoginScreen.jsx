@@ -7,9 +7,15 @@ import {
   SafeAreaView,
   TextInput,
   Alert,
+  Image,
 } from "react-native";
-
 import auth from "@react-native-firebase/auth";
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+
+GoogleSignin.configure({
+  webClientId:
+    "393526742914-1ooaup67kobvaqifq23lcvtuhibpfcva.apps.googleusercontent.com",
+});
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState("");
@@ -29,6 +35,38 @@ export default function LoginScreen({ navigation }) {
       navigation.replace("Home");
     } catch (error) {
       Alert.alert("Login Failed", error.message);
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    try {
+      await GoogleSignin.hasPlayServices();
+
+      const response = await GoogleSignin.signIn();
+
+      const idToken = response.data?.idToken;
+
+      if (!idToken) {
+        Alert.alert("Error", "No ID Token received");
+        return;
+      }
+
+      const googleCredential =
+        auth.GoogleAuthProvider.credential(idToken);
+
+      await auth().signInWithCredential(
+        googleCredential
+      );
+
+      Alert.alert("Success", "Google Login Success");
+
+      navigation.replace("Home");
+    } catch (error) {
+      console.log(error);
+      Alert.alert(
+        "Google Login Error",
+        error.message
+      );
     }
   };
 
@@ -83,6 +121,24 @@ export default function LoginScreen({ navigation }) {
             </Text>
           </TouchableOpacity>
         </View>
+
+        <TouchableOpacity
+          style={styles.googleButton}
+          onPress={handleGoogleLogin}
+        >
+          <Image
+            source={require("../assets/google.png")}
+            style={{
+              width: 22,
+              height: 22,
+              resizeMode: "contain",
+            }}
+          />
+
+          <Text style={styles.googleText}>
+            Continue with Google
+          </Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
@@ -163,5 +219,23 @@ const styles = StyleSheet.create({
     color: "#2436B8",
     marginLeft: 6,
     fontWeight: "700",
+  },
+  googleButton: {
+    marginTop: 20,
+    backgroundColor: "#FFFFFF",
+    borderWidth: 1,
+    borderColor: "#E5E7EB",
+    borderRadius: 15,
+    paddingVertical: 15,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  googleText: {
+    marginLeft: 10,
+    fontSize: 16,
+    fontWeight: "600",
+    color: "#333",
   },
 });

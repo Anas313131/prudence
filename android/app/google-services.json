@@ -12,7 +12,20 @@
           "package_name": "com.prudence"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "393526742914-08r1mgv61rqj0cbfe623j926g9do41en.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.prudence",
+            "certificate_hash": "04d89819693d990adbe4ff1e6c25dcaf6dc1514c"
+          }
+        },
+        {
+          "client_id": "393526742914-1ooaup67kobvaqifq23lcvtuhibpfcva.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyARR58x2TAmVhXyQiP2wIVNSSgWIY2kAvo"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "393526742914-1ooaup67kobvaqifq23lcvtuhibpfcva.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

@@ -1,9 +1,8 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 Screen Shot of Prudence
-<img width="397" height="898" alt="image" src="https://github.com/user-attachments/assets/fe60980c-6a7a-4664-8e8c-837ba1829ec0" />
+<img width="386" height="859" alt="image" src="https://github.com/user-attachments/assets/e3e832a5-cc2f-442f-a3e1-9268fccf1370" />
 <img width="394" height="866" alt="image" src="https://github.com/user-attachments/assets/0294ecee-e220-4bd3-b22b-7bd71259b341" />
-
 <img width="395" height="892" alt="image" src="https://github.com/user-attachments/assets/73288080-7181-4e94-925d-5982a8938016" />
 
 
